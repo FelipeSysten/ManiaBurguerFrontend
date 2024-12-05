@@ -1,12 +1,15 @@
-<div>
+<div  *ngFor="let categoria of  categorias">
   <h1 class="menu-title">CARDÁPIO</h1>
   <div class="burger-grid">
     <div class="container-burguer">
       <div class="burger-card" *ngFor="let burger of (showAll ? burgers : burgers.slice(0, 3))">
-        <app-card 
-          (click)="navigateToCategory(burger.categoryId)"
+        <div >
+        <app-card  
+        (click)="navigateToCategory(categoria.id)"
           [burger]="burger"
-          [title]="getCategoryTitle(burger.category)">
+          [categorias]="categorias"
+          [title]="burger.name">
+          
         </app-card> <!-- Correção feita aqui -->
       </div>
     </div>
@@ -20,3 +23,7 @@
     </app-button>
   </div>
 </div>
+</div>
+
+
+

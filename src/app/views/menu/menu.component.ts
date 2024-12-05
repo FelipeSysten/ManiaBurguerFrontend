@@ -30,18 +30,10 @@ import { CategoriaComponent } from '../categoria/categoria.component';
     private router: Router
   ) {}
 
-  ngOnInit() {
-    this.categoriaService.getCategorias().subscribe(response => {
-      if (response && response.dados) {
-        this.categorias = response.dados;
-      } else {
-        console.error('Dados inválidos:', response);
-        this.categorias = [];
-      }
-    });
+  ngOnInit(): void {
+    this.loadCategorias();
+    this.loadBurgers();
   }
-
-  
 
  // Alterna o estado de 'showAll', controlando a visibilidade dos itens do menu
  toggleMenu() {
@@ -75,17 +67,11 @@ import { CategoriaComponent } from '../categoria/categoria.component';
 
 
   // Navegar para a página de produtos filtrados por categoria
-  navigateToCategory(categoryId: number) {
-    if (!categoryId) {
-      console.error('Category ID is undefined or null:', categoryId);
-      return;
-    }
-    this.router.navigate(['/category', categoryId]);
+  navigateToCategory(categoryId: number): void {
+    this.router.navigate(['/products', categoryId]);
   }
-
-  getCategoryTitle(category: Categorias | undefined): string {
-    return category?.name ?? 'Categoria não definida';
-  }
-
-
 }
+
+
+
+
