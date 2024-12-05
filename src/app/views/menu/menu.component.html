@@ -1,0 +1,22 @@
+<div>
+  <h1 class="menu-title">CARDÁPIO</h1>
+  <div class="burger-grid">
+    <div class="container-burguer">
+      <div class="burger-card" *ngFor="let burger of (showAll ? burgers : burgers.slice(0, 3))">
+        <app-card 
+          (click)="navigateToCategory(burger.categoryId)"
+          [burger]="burger"
+          [title]="getCategoryTitle(burger.category)">
+        </app-card> <!-- Correção feita aqui -->
+      </div>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <app-button 
+      [label]="showAll ? 'MOSTRAR MENOS' : 'VER CARDÁPIO COMPLETO'" 
+      type="filled" 
+      size="large" 
+      (click)="toggleMenu()">
+    </app-button>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.contact-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .contact-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #521D16;
+  }
+  
+  .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-list li {
+    font-size: 1rem;
+    margin: 10px 0;
+  }
+  
+  .contact-list a {
+    color: #521D16;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-list a:hover {
+    color: #ED0000;
+  }
+  

@@ -1,0 +1,33 @@
+<div class="menu-container">
+    <h1 class="menu-title">Categorias</h1>
+    
+    <!-- Exibe as categorias -->
+    <div class="menu-grid">
+      <div 
+        class="card" 
+        *ngFor="let categoria of categorias" 
+        (click)="filterBurgersByCategory(categoria.id)" 
+      >
+        <h2 class="card-title">{{ categoria.name }}</h2>
+      </div>
+    </div>
+  
+    <!-- Exibe hambúrgueres da categoria selecionada -->
+    <div *ngIf="filteredBurgers.length > 0" class="burger-list">
+      <h2 class="burger-title">Hambúrgueres da Categoria</h2>
+      <div class="burger-grid">
+        <div class="burger-card" *ngFor="let burger of filteredBurgers">
+          <img [src]="burger.pathImage" alt="{{ burger.name }}" class="burger-img">
+          <h3 class="burger-name">{{ burger.name }}</h3>
+          <p class="burger-ingredients">{{ burger.baseDescription.join(', ') }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-container">
+      
+        <button [routerLink]="['/menu']" routerLinkActive="active" class="btn-menu">Ver Cardápio Completo</button>
+      </div>
+    <!-- Mensagem caso não existam hambúrgueres -->
+    <p *ngIf="filteredBurgers.length === 0" class="no-burgers">Selecione uma categoria para ver os hambúrgueres.</p>
+  </div>
+  

@@ -1,0 +1,78 @@
+<h2 class="title">PEDIDO</h2> <!-- Título da página -->
+
+<div class="order-form-container"> <!-- Container do formulário do pedido -->
+  <form #orderForm="ngForm" (ngSubmit)="submitOrder()"> <!-- Formulário com Angular Forms -->
+    
+    <!-- Linha do formulário para o primeiro produto e sua quantidade -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="produto1" class="form-label">Produto</label>
+        <app-input 
+          id="produto1" 
+          label="Produto" 
+          [required]="true" 
+          [(ngModel)]="produto1" 
+          name="produto1">
+        </app-input>
+      </div>
+      <div class="form-group">
+        <label for="quantidade1" class="form-label">Quantidade</label>
+        <app-input 
+          id="quantidade1" 
+          type="number" 
+          label="Quantidade" 
+          [required]="true" 
+          [(ngModel)]="quantidade1" 
+          name="quantidade1">
+        </app-input>
+      </div>
+    </div>
+
+    <!-- Linha do formulário para o segundo produto e sua quantidade -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="produto2" class="form-label">Produto</label>
+        <app-input 
+          id="produto2" 
+          label="Produto" 
+          [required]="true" 
+          [(ngModel)]="produto2" 
+          name="produto2">
+        </app-input>
+      </div>
+      <div class="form-group">
+        <label for="quantidade2" class="form-label">Quantidade</label>
+        <app-input 
+          id="quantidade2" 
+          type="number" 
+          label="Quantidade" 
+          [required]="true" 
+          [(ngModel)]="quantidade2" 
+          name="quantidade2">
+        </app-input>
+      </div>
+    </div>
+
+    <!-- Grupo de formulário para as observações -->
+    <div class="form-group full-width">
+      <label for="observacao" class="form-label">Observação</label>
+      <app-input 
+        id="observacao" 
+        label="Observação" 
+        [required]="false" 
+        [(ngModel)]="observacao" 
+        name="observacao" 
+        class="textarea-observacao">
+      </app-input>
+    </div>
+
+    <!-- Container para o botão de finalizar o pedido -->
+    <div class="button-container">
+      <app-button 
+        label="FINALIZAR" 
+        type="filled" 
+        [disabled]="!orderForm.valid">
+      </app-button>
+    </div>
+  </form>
+</div>

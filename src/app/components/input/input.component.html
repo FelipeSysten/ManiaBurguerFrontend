@@ -1,0 +1,4 @@
+<div class="input-group">
+    <label *ngIf="label" [for]="id">{{ label }} <span *ngIf="required">*</span></label>
+    <input [type]="type" [id]="id" [(ngModel)]="value" [required]="required" />
+  </div>

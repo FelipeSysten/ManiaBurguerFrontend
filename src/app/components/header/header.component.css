@@ -1,0 +1,74 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    padding: 1rem 2rem;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+}
+
+.logo {
+    flex: 0 0 auto; /* Mantém a logo fixa em tamanho */
+    margin-right: 1rem; /* Ajusta a distância entre a logo e o menu */
+}
+
+.logo img {
+    max-height: 40px; /* Define um tamanho máximo para a logo */
+}
+
+.nav {
+    display: flex;
+    gap: 2rem; /* Ajusta o espaçamento entre os itens do menu */
+    flex: 1; /* Usa o espaço restante para o menu */
+    justify-content: flex-end; /* Alinha os itens à direita */
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+}
+
+.nav a {
+    color: #521D16;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem; /* Tamanho ajustável */
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Consultas de mídia para responsividade */
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem; /* Reduz o padding em telas menores */
+    }
+
+    .logo {
+        margin-bottom: 1rem; /* Adiciona espaço abaixo da logo */
+    }
+
+    .nav {
+        gap: 1rem; /* Reduz o espaçamento entre os itens do menu */
+        justify-content: center; /* Centraliza o menu em tablets */
+    }
+
+    .nav a {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte em tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column; /* Empilha os itens em uma coluna */
+        align-items: center;
+    }
+
+    .nav {
+        flex-direction: column; /* Empilha os itens do menu */
+        gap: 0.8rem; /* Ajusta o espaçamento entre os itens */
+        align-items: center; /* Centraliza os links */
+    }
+
+    .nav a {
+        font-size: 0.85rem; /* Reduz ainda mais o tamanho da fonte */
+    }
+}

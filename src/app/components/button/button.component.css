@@ -1,0 +1,55 @@
+button {
+  padding: 10px 20px;
+  font-size: 23px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 3%;
+  margin-bottom: 15px; /* Adiciona um espaço abaixo de cada botão */
+  min-width: 256px;
+  max-width: 404px;
+  height: 66px;
+  font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  display: inline-block; /* Garante que os botões fiquem em linha, mas ainda possam ser espaçados */
+
+  /* Adiciona um espaçamento entre os botões */
+  &:not(:last-child) {
+    margin-bottom: 15px; /* Apenas se não for o último botão */
+  }
+}
+
+/* Estilo para o botão preenchido (filled) */
+button.filled {
+  background-color: #ED0000;
+  color: #fff;
+  border: none;
+  margin-right: 5%; /* Adiciona uma margem à direita para espaçar os botões */
+}
+
+button.filled:hover {
+  background-color: #C70000; /* Sutil mudança de cor ao passar o mouse */
+  transform: scale(1.05); /* Suave aumento de tamanho ao passar o mouse */
+}
+
+/* Estilo para o botão contornado (outlined) */
+button.outlined {
+  background-color: transparent;
+  color: #521D16;
+  border: 2px solid #ED0000;
+  margin-right: 5%; /* Adiciona uma margem à direita para espaçar os botões */
+
+  @media (max-width: 768px) { /* Ajuste para tablets */
+    margin-right: 10%; /* Mais espaço à direita em tablets */
+  }
+
+  @media (max-width: 360px) { /* Ajuste para celulares */
+    margin-right: 5%; /* Menos margem à direita em celulares */
+  }
+}
+
+button.outlined:hover {
+  background-color: #F9F9F9; /* Leve cor de fundo ao passar o mouse */
+  color: #ED0000; /* Cor de texto também muda ao passar o mouse */
+  transform: scale(1.05); /* Suave aumento de tamanho ao passar o mouse */
+}

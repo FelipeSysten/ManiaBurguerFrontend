@@ -1,0 +1,29 @@
+.input-container {
+    display: flex;
+    flex-direction: column; /* Garantir que o label fique acima do input */
+    margin-bottom: 15px; /* Espaçamento entre os inputs */
+  }
+  
+  .input-label {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #000; /* Preto */
+    margin-bottom: 5px; /* Espaçamento entre o label e o input */
+    display: flex;
+    align-items: center;
+  }
+  
+  .required-asterisk {
+    color: red; /* Vermelho */
+    margin-left: 2px; /* Espaço entre o texto e o asterisco */
+    font-size: 16px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  

@@ -1,0 +1,106 @@
+.home-container {
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.home-content {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os elementos dentro do home-content */
+}
+
+.home-content h1 {
+  font-size: 2rem; /* Tamanho ajustável */
+  color: #521D16;
+}
+
+.home-content p {
+  font-size: 1rem; /* Tamanho ajustável */
+  color: #521D16;
+  margin: 15px 0;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* Permite que os botões se ajustem em telas menores */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ED0000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem; /* Ajustado para melhor escala */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #521D16; /* Cor ao passar o mouse */
+}
+
+.banner {
+  width: 100%;
+  max-width: 836px; /* Limita o tamanho máximo em telas maiores */
+  height: auto;
+  margin: 0 auto; /* Centraliza o banner horizontalmente */
+}
+
+.banner img {
+  width: 100%; /* Ajusta a imagem à largura do banner */
+  height: auto; /* Mantém a proporção da imagem */
+  object-fit: cover; /* Mantém a imagem proporcional, cortando se necessário */
+}
+
+/* Consultas de mídia para responsividade */
+@media (max-width: 768px) {
+  .home-content h1 {
+      font-size: 1.8rem;
+  }
+
+  .home-content p {
+      font-size: 0.9rem;
+  }
+
+  .buttons-container {
+      gap: 10px;
+  }
+
+  button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+      font-size: 1.5rem;
+  }
+
+  .home-content p {
+      font-size: 0.8rem;
+  }
+
+  .buttons-container {
+      flex-direction: column; /* Empilha os botões verticalmente */
+      gap: 10px;
+  }
+
+  button {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      width: 100%; /* Botões ocupam toda a largura disponível */
+      max-width: 300px; /* Limita o tamanho máximo */
+  }
+
+  .banner {
+      max-width: 100%; /* Ajusta a largura em telas muito pequenas */
+  }
+}

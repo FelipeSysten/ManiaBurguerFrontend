@@ -1,0 +1,29 @@
+<div class="home-container">
+    
+  
+    <!-- Conteúdo da Home - Adicione Banner ou outros componentes -->
+    <div class="home-content">
+        <!-- Banner -->
+  <div class="banner">
+    <img src="assets/banner.png" alt="Banner BurguerMania" />
+  </div>
+  
+
+    
+
+      <!-- Botões -->
+      <div class="buttons-container">
+      <app-button
+      label="Fazer pedido"
+      type="filled"
+      (click)="navigateTo('order')">
+    </app-button>
+    <app-button
+    label="Acessar cardápio"
+    type="outlined"
+    (click)="navigateTo('menu')">
+  </app-button>
+      </div>
+    </div>
+  </div>
+  
