@@ -1,4 +1,4 @@
-<div  *ngFor="let categoria of  categorias">
+<div  *ngFor="let categoria of  (showAll ? categorias : categorias.slice(0, 1))">
   <h1 class="menu-title">CARDÁPIO</h1>
   <div class="burger-grid">
     <div class="container-burguer">
@@ -8,7 +8,7 @@
         (click)="navigateToCategory(categoria.id)"
           [burger]="burger"
           [categorias]="categorias"
-          [title]="burger.name">
+          [title]="categoria.name">
           
         </app-card> <!-- Correção feita aqui -->
       </div>

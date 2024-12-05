@@ -6,12 +6,12 @@
 
   <div class="card-container">
     <!-- Cartão do produto -->
-    <app-card-preco *ngFor="let burger of filteredBurgers" [burger]="burger" [categorias]="categorias"  [price]="burger.price"></app-card-preco>
+    <app-card-preco *ngFor="let burger of  (showAll ? burgers : burgers.slice(0, 1))" [burger]="burger" [categorias]="categorias"  [price]="burger.price"></app-card-preco>
   </div>
 
   <div class="description-container">
     <!-- Descrição do produto -->
-    <app-description  *ngFor="let burger of filteredBurgers" [burger]="burger" [categorias]="categorias"
+    <app-description  *ngFor="let burger of  (showAll ? burgers : burgers.slice(0, 1))" [burger]="burger" [categorias]="categorias"
       [title]="'Descrição'"
       [text]="burger.fullDescription">
     </app-description>

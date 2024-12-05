@@ -54,4 +54,6 @@ function run(): void {
   });
 }
 
+require('dotenv').config();
+
 run();

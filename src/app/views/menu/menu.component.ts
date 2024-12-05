@@ -19,6 +19,7 @@ import { CategoriaComponent } from '../categoria/categoria.component';
 
 
   export class MenuComponent implements OnInit {
+[x: string]: any;
     categorias: Categorias[] = []; // Lista de categorias
   burgers: Burgers[] = []; // Lista de hambúrgueres
   filteredBurgers: Burgers[] = []; // Hambúrgueres filtrados

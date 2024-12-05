@@ -1,8 +1,9 @@
 <div *ngIf="categorias.length > 0" class="card">
-  <h1 class="product-title">{{ categorias[0].name }}</h1> <!-- Exibe o nome da categoria filtrada -->
+  <h1 class="product-title" *ngIf="categorias.length > 0">{{ categorias[0]?.name }}</h1> <!-- Exibe o nome da categoria filtrada -->
   <div class="container-burguer">
-    <app-card-padrao class="burger-card" *ngFor="let burger of filteredBurgers" 
-    (click)="navigateToCategory(burger.categoryId)"
+    
+    <app-card-padrao class="burger-card" *ngFor="let burger of  (showAll ? burgers : burgers.slice(0, 1)) " 
+    (click)="navigateToCategory(burger.id)"
     [burger]="burger" [categorias]="categorias" [title]="burger.name"></app-card-padrao>
   </div>
   <p *ngIf="filteredBurgers.length === 0" class="no-burgers">
@@ -22,3 +23,12 @@
 <p *ngIf="categorias.length === 0" class="no-category">
   Categoria não encontrada.
 </p>
+
+<div *ngIf="categorias.length > 0; burgers">
+  <app-card-padrao class="burger-card" *ngFor="let burger of filteredBurgers" 
+  (click)="navigateToCategory(burger.categoryId)"
+  [burger]="burger" [categorias]="categorias" [title]="burger.name"></app-card-padrao>
+</div>
+<ng-template #noBurgers>
+  <p class="no-burgers">Nenhum hambúrguer disponível para esta categoria.</p>
+</ng-template>

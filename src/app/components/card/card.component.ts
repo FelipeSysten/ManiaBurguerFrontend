@@ -28,6 +28,8 @@ export class CardComponent implements OnInit {
    @Input() pathImage: string = ''; 
    @Input() price: string = ''; // Removido o "?" e definido um valor padrão, simplificando
   
+
+   showAll: boolean = false;
   constructor(
     
     private burgersService: BurgersService,
@@ -35,7 +37,7 @@ export class CardComponent implements OnInit {
   ) {}
 
   
-
+  
   ngOnInit(): void {
     
     

@@ -24,6 +24,8 @@ export class ProductComponent implements OnInit {
   categoryId: number | null = null; // Para armazenar o ID da categoria
   showAll: boolean = false;
 
+ 
+
   constructor(
     private categoriaService: CategoriasService,
     private burgersService: BurgersService,
@@ -73,7 +75,7 @@ export class ProductComponent implements OnInit {
 }
 
   // Navegar para a página de produtos filtrados por categoria
-  navigateToCategory(categoryId: number): void {
-    this.router.navigate(['/detail', categoryId]);
+  navigateToCategory(BurgerId: number): void {
+    this.router.navigate(['/detail', BurgerId]);
   }
 }

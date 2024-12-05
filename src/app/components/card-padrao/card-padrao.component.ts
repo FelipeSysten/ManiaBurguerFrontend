@@ -14,36 +14,15 @@ import { CategoriasService } from '../../services/categorias.service';
 })
 export class CardPadraoComponent implements OnInit {
  
-  @Input() burger!: Burgers;  // Aceita a entrada de um hambúrguer
-  @Input() categorias: Categorias[] = [];  // Lista de categorias recebida do componente pai
-
-  
-  
-   // Variáveis de entrada para o componente, com valores padrões
-   @Input() title: string = ''; 
-   @Input() name: string = ''; 
-   @Input() baseDescription: string = ''; 
-   @Input() fullDescription: string = ''; // Alteração no nome para seguir o padrão camelCase
-   @Input() pathImage: string = ''; 
-   @Input() price: string = ''; // Removido o "?" e definido um valor padrão, simplificando
-  
-  constructor(
-    
-    private burgersService: BurgersService,
-    private categoriaService: CategoriasService,
-  ) {}
-
-  
+  @Input() burger!: Burgers; // `burger` passado pelo pai
+  @Input() categorias: Categorias[] = []; // Lista de categorias passada pelo pai
+  @Input() title: string = ''; // Título do card (opcional)
 
   ngOnInit(): void {
-    
-    
-    // Nenhum código de carregamento é necessário aqui, pois os dados já são passados como @Input
+    console.log('Burger recebido:', this.burger);
+    console.log('Categorias recebidas:', this.categorias);
   }
-
-  
-
-
+  // Método para obter o nome da categoria com base no ID
   getCategoryName(categoryId: number): string {
     const category = this.categorias.find(categoria => categoria.id === categoryId);
     return category ? category.name : 'Sem Categoria';
